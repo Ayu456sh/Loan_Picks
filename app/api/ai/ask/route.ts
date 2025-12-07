@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
             async start(controller) {
                 const formattedAmount = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(loan.max_amount);
                 // SIMULATION MODE: Looks like real AI for the video
-                const mockResponse = `Hello! Excellent choice looking into **${loan.name}**.\n\nHere are the key details you should know:\n\n- **Provider**: ${loan.provider_name}\n- **Interest Rate**: ${loan.rate_apr}% APR\n- **Max Amount**: ${formattedAmount}\n\nBased on your financial needs, this loan offers competitive terms. Is there anything specific about the eligibility or fees you'd like to know?`;
+                const mockResponse = `Hello! Excellent choice looking into ${loan.name}.\n\nHere are the key details you should know:\n\n- Provider: ${loan.provider_name}\n- Interest Rate: ${loan.rate_apr}% APR\n- Max Amount: ${formattedAmount}\n\nBased on your financial needs, this loan offers competitive terms. Is there anything specific about the eligibility or fees you'd like to know?`;
                 
                 const chunks = mockResponse.split(/(?=[,.\n])/); 
                 
