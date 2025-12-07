@@ -8,7 +8,7 @@ export const revalidate = 0; // Dynamic page, always fetch fresh data based on f
 
 interface ProductPageProps {
   searchParams: {
-    q?: string;
+    search?: string;
     maxApr?: string;
     minScore?: string;
     minIncome?: string;
@@ -17,7 +17,7 @@ interface ProductPageProps {
 
 export default async function ProductsPage({ searchParams }: ProductPageProps) {
   const filters = {
-    search: searchParams.q,
+    search: searchParams.search,
     maxApr: searchParams.maxApr ? parseFloat(searchParams.maxApr) : undefined,
     minScore: searchParams.minScore ? parseInt(searchParams.minScore) : undefined,
     minIncome: searchParams.minIncome ? parseInt(searchParams.minIncome) : undefined,

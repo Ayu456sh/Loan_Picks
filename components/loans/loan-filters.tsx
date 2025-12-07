@@ -28,7 +28,7 @@ export function LoanFilters() {
   const searchParams = useSearchParams();
 
   // State
-  const [search, setSearch] = useState(searchParams.get('q') || '');
+  const [search, setSearch] = useState(searchParams.get('search') || '');
   const [maxApr, setMaxApr] = useState(searchParams.get('maxApr') || '20');
   const [minScore, setMinScore] = useState(searchParams.get('minScore') || '');
   const [minIncome, setMinIncome] = useState(searchParams.get('minIncome') || '');
@@ -43,8 +43,8 @@ export function LoanFilters() {
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
 
-    if (debouncedSearch) params.set('q', debouncedSearch);
-    else params.delete('q');
+    if (debouncedSearch) params.set('search', debouncedSearch);
+    else params.delete('search');
 
     if (debouncedApr && debouncedApr !== '20') params.set('maxApr', debouncedApr);
     else params.delete('maxApr');
