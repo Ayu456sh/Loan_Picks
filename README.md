@@ -4,21 +4,7 @@ A Next.js web application that allows users to explore personalized loan product
 
 ## 🏗 Architecture
 
-```mermaid
-graph TD
-    User[User] -->|Interacts| Client["Next.js Client (App Router)"]
-    Client -->|Fetches Loans| API[Next.js Route Handlers]
-    Client -->|Chat Request| AI_API["/api/ai/ask"]
-    
-    subgraph Data Layer
-        API -->|Query| DB[("Supabase / PostgreSQL")]
-    end
-    
-    subgraph AI Layer
-        AI_API -->|Context + Prompt| Gemini[Google Gemini API]
-        Gemini -->|Streaming Response| AI_API
-    end
-```
+![Loan Picks Architecture](/architecture.png)
 
 ## 🚀 Getting Started
 
