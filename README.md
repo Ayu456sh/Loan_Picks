@@ -4,7 +4,7 @@ A Next.js web application that allows users to explore personalized loan product
 
 ## 🏗 Architecture
 
-![Loan Picks Architecture](/architecture.png)
+![Loan Picks Architecture](public/architecture.png)
 
 ## 🚀 Getting Started
 
