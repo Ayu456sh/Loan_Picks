@@ -36,8 +36,9 @@ export async function POST(req: NextRequest) {
             // Attempt to initialize Gemini. 
             // If the API key is invalid or rate-limited, this might throw.
             const genAI = new GoogleGenerativeAI(apiKey);
+            // Switched to 'gemini-pro' as it has wider regional availability than 1.5-flash
             const model = genAI.getGenerativeModel({ 
-                model: 'gemini-1.5-flash',
+                model: 'gemini-pro',
                 // Strict rules to keep the AI grounded. We don't want it inventing features.
                 systemInstruction: `You are a helpful, friendly, and knowledgeable loan advisor assistant for 'LoanPicks'. 
                     
