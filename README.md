@@ -6,12 +6,12 @@ A Next.js web application that allows users to explore personalized loan product
 
 ```mermaid
 graph TD
-    User[User] -->|Interacts| Client[Next.js Client (App Router)]
+    User[User] -->|Interacts| Client["Next.js Client (App Router)"]
     Client -->|Fetches Loans| API[Next.js Route Handlers]
     Client -->|Chat Request| AI_API[/api/ai/ask]
     
     subgraph Data Layer
-        API -->|Query| DB[(Supabase / PostgreSQL)]
+        API -->|Query| DB[("Supabase / PostgreSQL")]
     end
     
     subgraph AI Layer
